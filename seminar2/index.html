@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- можно подключить здесь -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+</head>
+
+<body>
+    <div id="app">
+        <!-- задание 1 -->
+        <div class="product">
+            <h2>{{ product.title }}</h2>
+            <p>{{ product.price}}</p>
+            <img :src="product. image" alt="" width="300">
+            <button @click="addDiscount" :disabled="isDisabled">Скидка</button>
+        </div>
+
+        <!-- задание 2 -->
+        <hr>
+        <ul>
+            <li v-for="user in users" :key="user.id">{{ user.name }} - {{ user.age }}</li>
+        </ul>
+
+        <hr>
+        <ul>
+            <li v-for="product in products" :key="product.id">
+                <input type="number" step="1" v-model.number="product.count">
+                <input type="number" step="1" v-model.lazy.number="product.count">
+                <input type="number" step="1" v-model.lazy="product.count">
+                <label>
+                    <input type="checkbox"> {{ product.name }}
+                </label>
+            </li>
+        </ul>
+
+        <hr>
+        <!-- prevent отменяет стандартное поведение, т.е. форма не отправится -->
+        <form action="#" @submit.prevent = "addContact">    
+            <input v-model.lazy="firstName" type="text" /> type="text" placeholder="Имя">
+            <input v-model.lazy="lastName" type="text" placeholder="Фамилия">
+            <input v-model.lazy="email" type="text" placeholder="email">
+            <button>Отправить</button>
+        </form>
+        <ul>
+            <li v-for="contact in contacts" :key="contact.id" @click="delContact(contact.id)" @click=" removeContact($event)"> {{contact.firstName}} - {{contact.lastName}} - {{contact.email}}</li>
+            <li v-for="contact in contacts" :key="contact.id" @click=" removeContact($event)">
+                {{contact.firstName}} - {{contact.lastName}} - {{contact.email}}</li>
+        </ul>
+
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = {
+            data() {
+                return {
+                    // задание 4
+                    contacts: [],
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+
+                    // задание 3
+                    products: [{
+                        id: 1,
+                        name: "Молоко",
+                        count: 2
+                    },
+                    {
+                        id: 2,
+                        name: "Хлеб",
+                        count: 4
+                    },
+                    {
+                        id: 3,
+                        name: "Яблоки",
+                        count: 5
+                    },
+                    ],
+
+                    //задание 2
+                    users: [{
+                        id: 1,
+                        name: 'Alex',
+                        age: 18
+                    },
+                    {
+                        id: 2,
+                        name: 'Bob',
+                        age: 19
+                    },
+                    {
+                        id: 3,
+                        name: 'John',
+                        age: 20
+                    }
+                    ],
+
+                    //задание 1
+                    isDisabled: false,
+                    product: {
+                        title: "Товар",
+                        price: 1000,
+                        image: "https://gas-kvas.com/grafic/uploads/posts/2023-09/1695906477_gas-kvas-com-p-kartinki-knizhka-7.png",
+                    },
+                    discount: null,
+                }
+            },
+            methods: {
+                addContact() {
+                    const contact = {
+                        id: this.contacts.length + 1,
+                        firstName: this.firstName,
+                        lastName: this.lastName,
+                        email: this.email,
+                    }
+                    this.contacts.push(contact);
+                    this.firstName = "";
+                    this.lastName = "";
+                    this.email = "";
+                },
+                delContact(id) {
+                    this.contacts = contacts.filter( (contact) => contact.id !== id); // удаляем путем перезаписи массива
+                },
+                removeContact(event) {
+                    event.target.remove();  // удалится из DOM-дерева, а в массиве останется. splice тоже удаляет из массива
+                },
+
+                // задание 1
+                addDiscount() {
+                    const discount = Math.floor(Math.random() * 20 + 1);
+                    this.product.price -= this.product.price * discount / 100;
+                    this.isDisabled = true;
+                }
+            },
+        }
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>
