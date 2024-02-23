@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 0.5s ease;
+        }
+
+        .fade-enter-from,
+        .fade-leave-to {
+            opacity: 0;
+        }
+
+        /*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+        .slide-fade-enter-active {
+            transition: all 0.3s ease-out;
+        }
+
+        .slide-fade-leave-active {
+            transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+        }
+
+        .slide-fade-enter-from,
+        .slide-fade-leave-to {
+            transform: translateX(20px);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1 задание -->
+        <h1>{{ message }}</h1>
+
+        <!-- 2 задание -->
+        <p>Товаров в корзине {{ count }}</p>
+        <button @click="writeCount">Купить</button>
+        <button @click="changeText">{{ buttonText }}</button>
+        <button @click="writeCount">Купить</button>
+        <button @click="writeCount">Купить</button>
+        <button @click="writeCount">Купить</button>
+
+        <!-- 3 задание -->
+        <h2>Задание 3</h2>
+        <p v-if="access">Можете заказать товар</p>
+        <p v-if="!access">Доступ закрыт</p>
+        <button @click="access = true">Мне исполнилось 14 лет</button>
+        <button @click="access = false">Мне еще нет 14 лет</button>
+
+        <!-- 4 задание -->
+        <h2>Задание 4</h2>
+        <button v-on:click="showText = !showText">Показать еще</button>
+        <Transition name="slide-fade">
+            <p v-show="showText">Какой-то текст</p>
+        </Transition>
+
+        <!-- Задание 5 -->
+        <h2>Задание 5</h2>
+        <button v-on:click="random">Генерировать случайное число</button>
+        <p>{{ randomText }}</p>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+        const app = {
+
+        }
+
+        // vue2
+        new Vue({
+            el: '#app',     // поймали контейнер с id=app
+            data: {
+                message: 'Hello Vue',
+                count: 0,
+                buttonText: 'Купить',
+                access: true,
+                showText: false,
+                randomText: '',
+            },
+            methods: {
+                writeCount() {
+                    this.count = 1;
+                },
+                changeText() {
+                    this.buttonText = 'Товар в корзине';
+                },
+                random() {
+                    ramdomNum = Math.floor(Math.random() * 10 + 1);
+                    console.log(ramdomNum);
+                    if (ramdomNum < 5) {
+                        this.randomText = 'Число меньше 5';
+                    } else if (ramdomNum < 10) {
+                        this.randomText = 'Число от 5 до 9';
+                    } else {
+                        this.randomText = 'Число равно 10';
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

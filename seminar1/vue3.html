@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .animation {
+            animation: vision 1s ease-in-out;
+        }
+        @keyframes vision {
+            from{ opacity: 0;}
+            to{ opacity: 1;}
+        }
+        
+
+        /*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+        .slide-fade-enter-active {
+            transition: all 0.3s ease-out;
+        }
+
+        .slide-fade-leave-active {
+            transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+        }
+
+        .slide-fade-enter-from,
+        .slide-fade-leave-to {
+            transform: translateX(20px);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1 задание -->
+        <h1>{{ hello }}</h1>
+
+        <!-- 2 задание -->
+        <p>Товаров в корзине {{count}}</p>
+        <button @click="addCounter">{{btn}}</button>
+
+
+        <!-- <p>Товаров в корзине {{ count }}</p>
+        <button @click="writeCount">Купить</button>
+        <button @click="changeText">{{ buttonText }}</button> -->
+        <!-- <button @click="writeCount">Купить</button>
+        <button @click="writeCount">Купить</button>
+        <button @click="writeCount">Купить</button> -->
+
+        <!-- 3 задание -->
+        <h2>Задание 3</h2>
+        <button @click="canBy = !canBy" @click="access = true">Мне исполнилось 14 лет</button>
+        <p v-show="canBy">Можете заказать товар</p>
+        <button @click="cantBy = !cantBy">Мне еще нет 14 лет</button>
+        <p v-show="cantBy">Доступ закрыт</p>
+
+        <!-- 4 задание -->
+        <h2>Задание 4</h2>
+        <button v-on:click="showText = !showText">Показать еще</button>
+        <Transition name="slide-fade">
+            <p class="animation" v-show="showText">Какой-то текст</p>
+        </Transition>
+
+        <!-- Задание 5 -->
+        <h2>Задание 5</h2>
+        <button v-on:click="random">Генерировать случайное число</button>
+        <p>{{ randomNumber }}</p>
+        <p v-if="randomNumber < 5">Число меньше 5</p>
+        <p v-else-if="randomNumber < 10">Число от 5 до 9</p>
+        <p v-else>Число равно 10</p>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+        const app = {
+            data() {
+                return {
+                    hello: 'Hello Vue',
+                    btn: 'Купить',
+                    count: 0,
+                    canBy: false,
+                    cantBy: false,
+                    showText: false,
+                    randomNumber: 0,
+                }
+            },
+            methods: {
+                addCounter() {
+                    if (this.count < 1) {
+                        this.count++;
+                        this.btn = 'Товар в корзине';
+                    }
+                },
+                random() {
+                    this.randomNumber = Math.floor(Math.random() * 10 + 1);
+                    console.log(this.randomNumber);
+                },
+            },
+        }
+        Vue.createApp(app).mount("#app");
+
+        
+    </script>
+</body>
+
+</html>

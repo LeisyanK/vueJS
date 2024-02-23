@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="turn">{{ btnText }}</button>
+
+        <ul>
+            <li>1 элемент</li>
+            <li>2 элемент</li>
+            <li>3 элемент</li>
+        </ul>
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = {
+            data() {
+                return {
+                    btnText: 'Перевернуть',
+                }
+            },
+            methods: {
+                turn() {
+                    // console.log(this.btnText);
+                    let turnedWord = '';
+                    for (let i = this.btnText.length-1; i >= 0; i--) {
+                        // console.log(i);
+                        turnedWord += this.btnText[i];
+                    }
+                    this.btnText = turnedWord;
+                }
+            }
+        }
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+</html>
