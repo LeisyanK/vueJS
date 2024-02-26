@@ -16,6 +16,7 @@
         <h2>Счетчик</h2>
         <button v-on:click="counter++">increase {{ counter }}</button>
         <p>{{ counter }}</p>
+        <button v-on:click="increase(5)">increase</button>
         <button v-on:click="increase(5, $event)">increase</button>
         <p>{{ counter1 }}</p>
 

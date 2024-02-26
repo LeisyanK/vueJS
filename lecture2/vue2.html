@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            width: 350px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>jjjj</h1>
+    <div class="" id="app">
+        <input type="text" @keyup.enter="send"> <button @click="send">Отправить</button>
+
+        <h2>link element</h2>
+        <a href="" v-bind:href="linkHref">my new link</a>
+        <a href="" :href="linkHref">my new link</a>
+
+        <img :src="imgPhoto" alt="photo" v-bind:src="">
+        <img v-bind:src="imgPhoto" alt="photo">
+
+        <div class="block" style="background-color: grey;"></div>
+        <div class="block" :style="{ backgroundColor: 'grey' }"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                linkHref: 'product.html',
+                imgPhoto: 'image.jpg',
+                styleBlock: {
+                    backgroundColor: 'green',
+                }
+            },
+            methods: {
+                send() {
+                    console.log('Отправили данные внутри input');
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
