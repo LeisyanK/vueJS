@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            width: 350px;
+            height: 200px;
+        }
+        .btn {
+            width: 35px;
+            height: 35px;
+        }
+        .like {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="" id="app">
+        <input type="text" @keyup.enter="send"> <button @click="send">Отправить</button>
+
+        <h2>link element</h2>
+        <a href="" v-bind:href="linkHref">my new link</a>
+        <a href="" :href="linkHref">my new link</a>
+
+        <img :src="imgPhoto" alt="photo" v-bind:src="">
+        <img v-bind:src="imgPhoto" alt="photo">
+
+        <div class="block" style="background-color: grey;"></div>
+        <div class="block" :style="{ backgroundColor: 'grey' }">Lorem ipsum dolor sit amet.</div>
+        <div class="block" :style="styleBlock">Lorem ipsum dolor sit amet.</div>
+
+        <h2>v-model</h2>
+        <h2>{{modelData}}</h2>
+        <input type="text" name="" id="" v-model="modelData"> <!-- здесь мы передаем введенное значение в переменную modelData-->
+
+        <h2>Калькулятор</h2>
+        <input type="text" v-model.number="firstNumber">
+        <input type="text" v-model.number="secondNumber">
+        =
+        {{ result }}
+        <div>
+            <button @click="plus">+</button>
+            <button @click="minus">-</button>
+            <button @click="mult">*</button>
+            <button @click="div">/</button>
+        </div>
+
+        <h2>Конструктор</h2>
+        <input type="text" v-model="blockWidth">
+        <input type="text" v-model="blockColor">
+        <div class="block" :style="changeBlock">Не работает метод changeBlock()
+        </div>
+        <div class="block" :style="change">Здесь работает "computed"
+        </div>
+
+        <h2>циклы</h2>
+        <h2>list</h2>
+        <ul>
+            <li v-for="item in listItems" :key="item.id">{{ item }}</li>
+        </ul>
+        <input type="text" v-model="newList" @keyup.enter="addItem">
+
+        <h2>Работа с массивом данных (объектов)</h2>
+        <div class="article" v-for="article in data" :key="article.id">
+            <h2 class="article__title">{{ article.title }}</h2>
+            <p class="article__text">{{ article.text }}</p>
+            <button class="btn" @click="likeToggle = !likeToggle" :class="{like: likeToggle}">like</button>
+            <button class="btn" @click="likeChange(article.id, $event)" :class="{like: article.like}">like</button>
+        </div>
+    </div>    
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+     -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    likeToggle: false,
+                    data: [
+                        {
+                            id: 1,
+                            title: 'Статья 1',
+                            text: 'текст статьи 1',
+                            like: false
+                        },
+                        {
+                            id: 2,
+                            title: 'Статья 2',
+                            text: 'текст статьи 2',
+                            like: false
+                        }
+                    ],
+                    listItems: [1, 2, 4],
+                    newList: '',
+
+                    blockWidth: 100,
+                    blockColor: '#ccc',
+
+                    firstNumber: 0,
+                    secondNumber: 0,
+                    result: 0,
+
+                    modelData: '',
+                    linkHref: 'product.html',
+                    imgPhoto: 'image.jpg',
+                    styleBlock: {
+                        backgroundColor: 'green',
+                        color: 'red',
+                    }
+                }
+            }, 
+            methods: {
+                likeChange(id, $event) {
+                    console.log($event.target);
+                    console.log(id);
+                    // this.data.filter(article => article.id === id).map(article => article.like = true);
+                    this.data.filter(article => article.id === id).map(article => article.like = !article.like);
+                },
+                addItem() {
+                    this.listItems.push(this.newList);
+                },
+                changeBlock() {
+                    return {
+                        // width: this.blockWidth,
+                        // height: this.blockWidth,
+                        width: `${this.blockWidth}px`,
+                        height: `${this.blockWidth}px`,
+                        backgroundColor: this.blockColor,
+                    }
+                },
+                plus() {
+                    // this.result = Number(this.firstNumber) + Number(this.secondNumber);
+                    this.result = this.firstNumber + this.secondNumber;
+                },
+                minus() {
+                    this.result = this.firstNumber - this.secondNumber;
+                },
+                mult() {
+                    this.result = this.firstNumber * this.secondNumber;
+                },
+                div() {
+                    this.result = this.firstNumber / this.secondNumber;
+                },
+
+                headingText() {
+                    if (this.modelData === '') {
+                        this.modelData = 'Заголовок блока';
+                    }
+                },
+                send() {
+                    console.log('Отправили данные внутри input');
+                }
+            },
+            computed: {
+                change() {
+                    return {
+                        width: `${this.blockWidth}px`,
+                        height: `${this.blockWidth}px`,
+                        backgroundColor: this.blockColor
+                    }
+                }
+            }
+        }
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            width: 350px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="" id="app">
+        <h2>Component</h2>
+        <new-component title="Заголовок из props"></new-component>
+        <new-component title="Другой заголовок"></new-component>
+        <standart-component></standart-component>
+        <new-component :title="article" v-for="article in articles" :key="article.id"></new-component>
+        <new-component2 title="Hello counter" :counter="counter"></new-component2>
+        <new-component3 title="Second counter"></new-component3>
+        <new-component3 title="Second counter"></new-component3>
+        
+        <new-component4 title="Компонент внутри компонента"></new-component4>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="component.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'text message',
+                articles: ['info article1', 'info article2', 'info article3'],
+                counter: 0,
+            },
+            methods: {
+                newInfo() {
+                    console.log('hello methods');
+                }
+            },
+            computed: {
+                newComp() {
+                    return this.message;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
