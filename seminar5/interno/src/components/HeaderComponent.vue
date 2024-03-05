@@ -29,6 +29,8 @@
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/helpers/_vars.scss';
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -53,7 +55,7 @@
     line-height: 25px;
     letter-spacing: 0em;
     text-align: center;
-    color: #292F36;
+    color: $headingColor;
 }
 
 </style>

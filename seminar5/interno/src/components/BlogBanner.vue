@@ -23,7 +23,10 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
+// подключаем переменные
+@import '@/assets/scss/helpers/_vars.scss';  
+
 .blog-banner {
     margin-bottom: 200px;
 
@@ -58,7 +61,7 @@
             line-height: 63px;
             letter-spacing: 0em;
             // text-align: left;
-            color: #292F36;
+            color: $headingColor;
         }
     }
 }

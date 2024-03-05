@@ -37,6 +37,8 @@
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/helpers/_vars.scss';
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -53,7 +55,7 @@
             line-height: 33px;
             letter-spacing: 0.01em;
             text-align: left;
-            color: #4D5053;
+            color: $textColor;
             margin-top: 18px;
             margin-bottom: 30px;
         }
@@ -78,7 +80,7 @@
             line-height: 31px;
             letter-spacing: 0em;
             text-align: left;
-            color: #292F36;
+            color: $headingColor;
             margin-bottom: 66px;
         }
 
@@ -90,7 +92,7 @@
             line-height: 33px;
             letter-spacing: 0.01em;
             text-align: left;
-            color: #292F36;
+            color: $headingColor;
             margin-bottom: 66px;
         }
     }

@@ -125,6 +125,8 @@ import SingleArticle from "./SingleArticle.vue";
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/helpers/_vars.scss';
+
 .banner {
     // background-color: #F4F0EC;
     // border-radius: 10px;
@@ -154,7 +156,7 @@ import SingleArticle from "./SingleArticle.vue";
         line-height: 81px;
         letter-spacing: 0em;
         text-align: left;
-        color: #292F36;
+        color: $headingColor;
     }
 
     &__text {
@@ -164,7 +166,7 @@ import SingleArticle from "./SingleArticle.vue";
         line-height: 33px;
         letter-spacing: 0.01em;
         text-align: left;
-        color: #4D5053;
+        color: $textColor;
     }
 
     &__btn {
@@ -177,7 +179,7 @@ import SingleArticle from "./SingleArticle.vue";
         letter-spacing: 0.02em;
         text-align: center;
         color: #FFFFFF;
-        background-color: #292F36;
+        background-color: $headingColor;
         max-width: 50%;
     }
 
@@ -217,7 +219,7 @@ import SingleArticle from "./SingleArticle.vue";
         font-weight: 400;
         line-height: 63px;
         letter-spacing: 0.02em;
-        color: #292F36;
+        color: $headingColor;
     }
 
     &__text {
@@ -226,7 +228,7 @@ import SingleArticle from "./SingleArticle.vue";
         font-weight: 400;
         line-height: 33px;
         letter-spacing: 0.01em;
-        color: #4D5053;
+        color: $textColor;
     }
 
     &__box {
@@ -256,7 +258,7 @@ import SingleArticle from "./SingleArticle.vue";
         height: 70px;
         border-radius: 50%;
         background: #F4F0EC;
-        color: #292F36;
+        color: $headingColor;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -269,7 +271,7 @@ import SingleArticle from "./SingleArticle.vue";
         line-height: 31px;
         letter-spacing: 0.02em;
         text-align: left;
-        color: #292F36;
+        color: $headingColor;
     }
 
     &__text {
@@ -279,7 +281,7 @@ import SingleArticle from "./SingleArticle.vue";
         line-height: 33px;
         letter-spacing: 0.01em;
         text-align: left;
-        color: #4D5053;
+        color: $textColor;
     }
 }
 
@@ -339,7 +341,7 @@ import SingleArticle from "./SingleArticle.vue";
         line-height: 33px;
         letter-spacing: 0.01em;
         text-align: left;
-        color: #4D5053;
+        color: $textColor;
     }
 }
 
@@ -381,7 +383,7 @@ import SingleArticle from "./SingleArticle.vue";
         letter-spacing: 0.01em;
         text-align: left;
         padding: 0.5rem 1rem;
-        color: #4D5053;
+        color: $textColor;
         background-color: #FFF;
         border-radius: 5px 5px 5px 0;
     }
@@ -398,7 +400,7 @@ import SingleArticle from "./SingleArticle.vue";
         line-height: 31px;
         letter-spacing: 0.02em;
         text-align: left;
-        color: #292F36;
+        color: $headingColor;
         margin-bottom: 20px;
         white-space: pre-line; // используем, чтобы отображались переносы строк
     }
@@ -410,7 +412,7 @@ import SingleArticle from "./SingleArticle.vue";
         line-height: 33px;
         letter-spacing: 0.01em;
         text-align: left;
-        color: #4D5053;
+        color: $textColor;
         margin-bottom: 41px;
     }
 
@@ -435,7 +437,7 @@ import SingleArticle from "./SingleArticle.vue";
         height: 52px;
         border-radius: 50%;
         background: #F4F0EC;
-        color: #292F36;
+        color: $headingColor;
         display: flex;
         justify-content: center;
         align-items: center;

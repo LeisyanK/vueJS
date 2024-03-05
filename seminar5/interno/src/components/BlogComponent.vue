@@ -58,6 +58,8 @@ import LatestPost from './LatestPost.vue';
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/helpers/_vars.scss';
+
 .blog {
     margin-bottom: 96px;
 
@@ -87,7 +89,7 @@ import LatestPost from './LatestPost.vue';
         font-weight: 400;
         line-height: 63px;
         letter-spacing: 0.02em;
-        color: #292F36;;
+        color: $headingColor;;
     }
 
     &__text {
@@ -96,7 +98,7 @@ import LatestPost from './LatestPost.vue';
         font-weight: 400;
         line-height: 33px;
         letter-spacing: 0.01em;
-        color: #4D5053;
+        color: $textColor;
     }
 
     &__box {
@@ -143,7 +145,7 @@ import LatestPost from './LatestPost.vue';
         letter-spacing: 0.01em;
         text-align: left;
         padding: 0.5rem 1rem;
-        color: #4D5053;
+        color: $textColor;
         background-color: #FFF;
         border-radius: 5px 5px 5px 0;
     }
@@ -159,7 +161,7 @@ import LatestPost from './LatestPost.vue';
         line-height: 31px;
         letter-spacing: 0.02em;
         text-align: left;
-        color: #292F36;
+        color: $headingColor;
         margin-bottom: 20px;
         white-space: pre-line; 
     }
@@ -171,7 +173,7 @@ import LatestPost from './LatestPost.vue';
         line-height: 33px;
         letter-spacing: 0.01em;
         text-align: left;
-        color: #4D5053;
+        color: $textColor;
         margin-bottom: 41px;
     }
 
@@ -196,7 +198,7 @@ import LatestPost from './LatestPost.vue';
         height: 52px;
         border-radius: 50%;
         background: #F4F0EC;
-        color: #292F36;
+        color: $headingColor;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -220,7 +222,7 @@ import LatestPost from './LatestPost.vue';
         height: 52px;
         border-radius: 50%;
         background: #FFF;
-        color: #292F36;
+        color: $headingColor;
         display: flex;
         justify-content: center;
         align-items: center;

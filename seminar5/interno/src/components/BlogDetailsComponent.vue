@@ -69,6 +69,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/helpers/_vars.scss';
+
 .blog-banner {
     margin-bottom: 200px;
 
@@ -99,7 +101,7 @@ export default {
         line-height: 63px;
         letter-spacing: 0.02em;
         text-align: left;
-        color: #292F36;
+        color: $headingColor;
         margin-bottom: 16px;
     }
 
@@ -120,7 +122,7 @@ export default {
         letter-spacing: 0.01em;
         text-align: left;
         margin-bottom: 48px;
-        color: #4D5053;
+        color: $textColor;
     }
 
     &__text {
@@ -158,7 +160,7 @@ export default {
         line-height: 31px;
         letter-spacing: 0.02em;
         text-align: left;
-        color: #292F36;
+        color: $headingColor;
         margin-bottom: 24px;
     }
 
@@ -173,7 +175,7 @@ export default {
     border-radius: 10px;
     padding: 1rem 2rem;
     background: #F4F0EC;
-    color: #292F36;
+    color: $headingColor;
     font-family: Jost;
     font-size: 18px;
     font-weight: 400;
@@ -183,13 +185,13 @@ export default {
 
     &:hover,
     .active {
-        background: #292F36;
+        background: $headingColor;
         color: #FFF;
     }
 }
 
 .active {
-    background: #292F36;
+    background: $headingColor;
     color: #FFF;
 }
 </style>

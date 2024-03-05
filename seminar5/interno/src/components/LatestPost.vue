@@ -34,6 +34,8 @@
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/helpers/_vars.scss';
+
 .latestArticle {
     display: flex;
     justify-content: space-between;
@@ -59,7 +61,7 @@
         line-height: 31px;
         letter-spacing: 0.02em;
         text-align: left;
-        color: #292F36;
+        color: $headingColor;
         margin-bottom: 20px;
         white-space: pre-line; 
     }
@@ -70,7 +72,7 @@
         line-height: 33px;
         letter-spacing: 0.01em;
         text-align: left;
-        color: #4D5053;
+        color: $textColor;
         margin-bottom: 41px;
     }
 
@@ -95,7 +97,7 @@
         height: 52px;
         border-radius: 50%;
         background: #F4F0EC;
-        color: #292F36;
+        color: $headingColor;
         display: flex;
         justify-content: center;
         align-items: center;
