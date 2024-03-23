@@ -71,12 +71,13 @@
                     content of a page when lookings at its layouts the points of using.</p>
             </div>
         </div>
+        
         <div class="articles">
-            <div v-for="article in getArticles" :key="article.id">
+            <div v-for="article in getThreeArticles" :key="article.id"  class="article article_small">
 
                 <!-- <SingleArticleComponent :article="article" /> -->
 
-                <div class="article article_small">
+                <!-- <div class="article article_small"> -->
                     <div class="article__img">
                         <img :src="article.img" alt="статья">
                         <p class="article__tag">{{ article.tag }}</p>
@@ -88,7 +89,7 @@
                         <p class="article__date">{{ article.date }}</p>
                         <div class="article__btn"><i class="fa-solid fa-chevron-right"></i></div>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </section>
@@ -110,17 +111,23 @@ import { mapState, mapActions, mapMutations, mapGetters } from 'vuex';
                 projects: (state) => state.projects.slice(0, 4)
                 },
                 'articles'),
-            ...mapGetters(['getArticles']),
+            ...mapGetters(['getThreeArticles']),
 
         },
-    methods: {
-        ...mapMutations(['SET_DATA']),
-        ...mapActions(['fetchData']),
-    },
-    created() {
-        this.SET_DATA(this.fetchData);
-        // console.log(this.getArticles);
-    }
+    // methods: {
+    //     // ...mapMutations(['SET_DATA']),
+    //     ...mapActions(['fetchData']),
+    // },
+    // mounted() {
+    //     this.SET_DATA(this.fetchData);
+    //     // this.$store.dispatch
+    //     // console.log(this.getArticles);
+    // },
+    // перенесла в App.vue для всего проекта
+    // created() {
+    //     // получение данных при загрузке страницы
+    //     this.$store.dispatch('fetchData');
+    // },
 
     }
 </script>
@@ -357,101 +364,102 @@ import { mapState, mapActions, mapMutations, mapGetters } from 'vuex';
     width: 32%;
 }
 
-// .article {
-//     padding: 20px;
-//     border: 1px solid #E7E7E7;
-//     border-radius: 50px;
+.article {
+    padding: 20px;
+    border: 1px solid #E7E7E7;
+    border-radius: 50px;
 
-//     &_small {
-//         width: 32%;
-//     }
+    &_small {
+        width: 32%;
+    }
 
-//     &__img {
-//         position: relative;
-//         margin-bottom: 20px;
-//     }
+    &__img {
+        position: relative;
+        margin-bottom: 20px;
+    }
 
-//     &__img img {
-//         border-radius: 40px 40px 0 0;
-//         background-color: #EAEAEA;
-//     }
+    &__img img {
+        border-radius: 40px 40px 0 0;
+        background-color: #EAEAEA;
+    }
 
-//     &__tag {
-//         position: absolute;
-//         left: 20px;
-//         bottom: 20px;
-//         font-family: Jost;
-//         font-size: 16px;
-//         font-weight: 400;
-//         line-height: 24px;
-//         letter-spacing: 0.01em;
-//         text-align: left;
-//         padding: 0.5rem 1rem;
-//         color: $textColor;
-//         background-color: #FFF;
-//         border-radius: 5px 5px 5px 0;
-//     }
+    &__tag {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        font-family: Jost;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        text-align: left;
+        padding: 0.5rem 1rem;
+        color: $textColor;
+        background-color: #FFF;
+        border-radius: 5px 5px 5px 0;
+    }
 
-//     &__text {
-//         width: 85%;//80%;
-//         // margin-bottom: 20px;
-//     }
+    &__text {
+        width: 85%;//80%;
+        // margin-bottom: 20px;
+    }
 
-//     &__heading {
-//         font-family: DM Serif Display;
-//         font-size: 25px;
-//         font-weight: 400;
-//         line-height: 31px;
-//         letter-spacing: 0.02em;
-//         text-align: left;
-//         color: $headingColor;
-//         margin-bottom: 20px;
-//         white-space: pre-line; // используем, чтобы отображались переносы строк
-//     }
+    &__heading {
+        font-family: DM Serif Display;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 31px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: $headingColor;
+        margin-bottom: 20px;
+        white-space: pre-line; // используем, чтобы отображались переносы строк
+    }
 
-//     &__content {
-//         font-family: Jost;
-//         font-size: 22px;
-//         font-weight: 400;
-//         line-height: 33px;
-//         letter-spacing: 0.01em;
-//         text-align: left;
-//         color: $textColor;
-//         margin-bottom: 41px;
-//     }
+    &__content {
+        font-family: Jost;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 33px;
+        letter-spacing: 0.01em;
+        text-align: left;
+        color: $textColor;
+        margin-bottom: 41px;
+    }
 
-//     &__block {
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         margin-bottom: 16px;
-//     }
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+    }
 
-//     &__date {
-//         font-family: Jost;
-//         font-size: 16px;
-//         font-weight: 400;
-//         line-height: 24px;
-//         letter-spacing: 0.01em;
-//         text-align: left;
-//     }
+    &__date {
+        font-family: Jost;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        text-align: left;
+    }
 
-//     &__btn {
-//         width: 52px;
-//         height: 52px;
-//         border-radius: 50%;
-//         background: #F4F0EC;
-//         color: $headingColor;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//     }
-// }
+    &__btn {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #F4F0EC;
+        color: $headingColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
-// .article:hover {
-//     background-color: #F4F0EC;
-// }
+.article:hover {
+    background-color: #F4F0EC;
+}
 
-// .article:hover .article__btn {
-//     background-color: #FFF;
-// }</style>
+.article:hover .article__btn {
+    background-color: #FFF;
+}
+</style>

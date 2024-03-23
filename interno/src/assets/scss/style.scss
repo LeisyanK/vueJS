@@ -11,6 +11,6 @@ a {
 }
 
 .center {
-    padding-left: calc(50% - 1200px / 2);
-    padding-right: calc(50% - 1200px / 2);
+    padding-left: calc(50% - $widthSite / 2);
+    padding-right: calc(50% - $widthSite / 2);
 }

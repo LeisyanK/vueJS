@@ -3,6 +3,88 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     articles: [],
+    // articles: [
+    //   {
+    //     id: 1,
+    //     img: require("@/assets/img/blog/kitchen1.jpg"),
+    //     tag: 'Kitchen Design',
+    //     heading: 'Let’s Get Solution For Building Construction Work',
+    //     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum laudantium fuga, incidunt rem tenetur non earum inventore quo ab sapiente dicta. Ratione aliquam corrupti dolorum aut tempore debitis possimus modi. \nLorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius reprehenderit iure atque dolor, numquam consequuntur ab, deleniti illum at obcaecati? Error nesciunt cum magnam, nostrum eveniet eius voluptates totam?',
+    //     date: '26 December,2022',
+    //   },
+    //   {
+    //     id: 2,
+    //     img: require("@/assets/img/blog/living1.jpg"),
+    //     tag: 'Living Design',
+    //     heading: 'Low Cost Latest Invented Interior Designing \nIdeas.',
+    //     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, officiis placeat perferendis laudantium sit adipisci pariatur hic unde. Doloribus, nihil. Delectus natus accusantium pariatur tempore consectetur unde ipsum reprehenderit perferendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. \nCorporis incidunt doloremque nostrum, necessitatibus perspiciatis, soluta molestiae vitae voluptatibus quae laborum temporibus voluptate amet sed! Quaerat laboriosam possimus perferendis ut fugit.',
+    //     date: '22 December,2022'
+    //   },
+    //   {
+    //     id: 3,
+    //     img: require("@/assets/img/blog/interior1.jpg"),
+    //     tag: 'Interior Design',
+    //     heading: 'Best For Any Office & Business Interior Solution',
+    //     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus soluta quaerat enim eius dolores autem nihil debitis delectus, magni porro consectetur quo minus veniam corporis incidunt hic eveniet. Rerum, illo? \nLorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit expedita doloremque modi voluptate, vitae cupiditate a autem. Repellendus dolores nihil minima dolorem quam vero ipsam iure adipisci quos. Sed, mollitia!',
+    //     date: '25 December,2022'
+    //   },
+    //   {
+    //     id: 4,
+    //     img: require("@/assets/img/blog/kitchen2.jpg"),
+    //     tag: 'Kitchen Design',
+    //     heading: 'Let’s Get Solution For Building Construction Work',
+    //     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, officiis placeat perferendis laudantium sit adipisci pariatur hic unde. Doloribus, nihil. Delectus natus accusantium pariatur tempore consectetur unde ipsum reprehenderit perferendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. \nCorporis incidunt doloremque nostrum, necessitatibus perspiciatis, soluta molestiae vitae voluptatibus quae laborum temporibus voluptate amet sed! Quaerat laboriosam possimus perferendis ut fugit.',
+    //     date: '26 December,2022'
+    //   },
+    //   {
+    //     id: 5,
+    //     img: require("@/assets/img/blog/living2.jpg"),
+    //     tag: 'Living Design',
+    //     heading: 'Low Cost Latest Invented Interior Designing \nIdeas.',
+    //     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus soluta quaerat enim eius dolores autem nihil debitis delectus, magni porro consectetur quo minus veniam corporis incidunt hic eveniet. Rerum, illo? \nLorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit expedita doloremque modi voluptate, vitae cupiditate a autem. Repellendus dolores nihil minima dolorem quam vero ipsam iure adipisci quos. Sed, mollitia!',
+    //     date: '22 December,2022'
+    //   },
+    //   {
+    //     id: 6,
+    //     img: require("@/assets/img/blog/interior2.jpg"),
+    //     tag: 'Interior Design',
+    //     heading: 'Best For Any Office & Business Interior Solution',
+    //     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum laudantium fuga, incidunt rem tenetur non earum inventore quo ab sapiente dicta. Ratione aliquam corrupti dolorum aut tempore debitis possimus modi. \nLorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius reprehenderit iure atque dolor, numquam consequuntur ab, deleniti illum at obcaecati? Error nesciunt cum magnam, nostrum eveniet eius voluptates totam?',
+    //     date: '25 December,2022'
+    //   },
+    //   {
+    //     id: 7,
+    //     img: require("@/assets/img/blog/Architecture1.jpg"),
+    //     tag: 'Architecture Design',
+    //     heading: 'Best For Any Office & Business Architecture Solution',
+    //     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum laudantium fuga, incidunt rem tenetur non earum inventore quo ab sapiente dicta. Ratione aliquam corrupti dolorum aut tempore debitis possimus modi. \nLorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius reprehenderit iure atque dolor, numquam consequuntur ab, deleniti illum at obcaecati? Error nesciunt cum magnam, nostrum eveniet eius voluptates totam?',
+    //     date: '22 December,2022'
+    //   },
+    //   {
+    //     id: 8,
+    //     img: require("@/assets/img/blog/Architecture2.jpg"),
+    //     tag: 'Architecture Design',
+    //     heading: 'Low Cost Latest Invented Architecture Designing \nIdeas.',
+    //     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus soluta quaerat enim eius dolores autem nihil debitis delectus, magni porro consectetur quo minus veniam corporis incidunt hic eveniet. Rerum, illo? \nLorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit expedita doloremque modi voluptate, vitae cupiditate a autem. Repellendus dolores nihil minima dolorem quam vero ipsam iure adipisci quos. Sed, mollitia!',
+    //     date: '28 December,2022'
+    //   },
+    //   {
+    //     id: 9,
+    //     img: require("@/assets/img/blog/bedroom1.jpg"),
+    //     tag: 'Bedroom Design',
+    //     heading: 'Latest Invented Bedroom Designing \nIdeas.',
+    //     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit necessitatibus unde quae non architecto quaerat, iure ipsum temporibus cum corrupti illo minus! Reprehenderit ab sunt libero fuga iste eveniet molestias. \nLorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum provident, nihil minus, atque perspiciatis obcaecati distinctio mollitia tempora molestiae non doloremque ipsa architecto quis facilis beatae. Dicta eligendi nostrum et?',
+    //     date: '27 December,2022'
+    //   },
+    //   {
+    //     id: 10,
+    //     img: require("@/assets/img/blog/bedroom2.jpg"),
+    //     tag: 'Bedroom Design',
+    //     heading: 'Design sprints are great',
+    //     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, cum illum! Eos eaque unde natus minima odio, illo delectus non id laudantium magni voluptatem alias eveniet, ea dignissimos sint excepturi similique repellat in quam. \nAmet fuga provident vel enim beatae mollitia, pariatur itaque minima ut, consectetur corrupti eveniet repellat suscipit?',
+    //     date: '17 December,2022'
+    //   },
+    // ],
     projects: [
       {
         id: 1,
@@ -113,7 +195,7 @@ export default createStore({
       },
       {
         id: 13,
-        tag: 'Living',
+        tag: 'Living Area',
         title: 'Minimal Living Area',
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/living1.jpg"), require("@/assets/img/projects/living2.jpg"), require("@/assets/img/projects/living3.jpg")],
@@ -184,15 +266,108 @@ export default createStore({
         text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati ducimus. Recusandae, possimus qui deserunt quisquam accusamus perferendis odio, nostrum voluptatibus iste dolores, nisi autem quibusdam velit beatae iure magnam.'
       },
     ],
+    bannerInfo: [
+      { pagePath: '/projects', img: require("@/assets/img/projects/projectBanner.jpg"), heading: 'Our Project', pageName: 'Project' },
+      { pagePath: '/articles', img: require("@/assets/img/blog/banner.jpg"), heading: 'Articles & News', pageName: 'Blog' },
+    ],
+    projectTags: [
+      { text: "Bathroom", active: false },
+      { text: "Bedroom", active: true },
+      { text: "Kitchen", active: false },
+      { text: "Living Area", active: false },
+    ],
+    articleTags: [
+      { text: "Kitchen", active: false },
+      { text: "Bedroom", active: true },
+      { text: "Living", active: false },
+      { text: "Architecture", active: false },
+      { text: "Kitchen Planning", active: false },
+      { text: "Bedroom", active: false },
+    ],
   },
   getters: {
-    getArticles(state) {
-      return state.articles;
+    getThreeArticles(state) {
+      return state.articles.slice(0, 3);
     },
+    getSixArticles(state) {
+      return state.articles.slice(0, 6);
+    },
+    getArticleTags(state) {
+      return state.articleTags;
+    },
+    getProjectTags(state) {
+      return state.projectTags;
+    },
+    // фильтрация статей по тегу
+    getFilteredArticles(state) {
+      const selectedTag = state.articleTags.filter(tag => tag.active == true);
+      // console.log(selectedTag[0]);
+      
+      // let filteredArticles = state.articles.filter(article => article.tag == selectedTag[0].text);
+      let filteredArticles = state.articles.filter(article => article.tag.includes(selectedTag[0].text));
+      // console.log(filteredArticles);
+      return filteredArticles;
+    },
+    // фильтрация проектов по тегу
+    getFilteredProjects(state) {
+      const selectedTag = state.projectTags.filter(tag => tag.active == true);
+      // console.log(selectedTag[0].text);
+      return state.projects.filter(project => project.tag == selectedTag[0].text);
+      // return state.projects.filter(project => selectedTag[0].text.include(project.tag));
+    },
+    getImagesForSlider(state, projectId) {
+      images = state.projects.filter(project => project.id === projectId).img;
+      console.log(images);
+      return images;
+    },
+    getImages(state) {
+      // images = state.projects.filter(project => project.id == 1).img;
+      state.projects.forEach(project => {
+        console.log(project);
+        if (project.id === 1) {
+          console.log(true);
+          console.log(project.img);
+          return project.img[0];
+        }
+      });
+      return require("@/assets/img/NotFound.jpg");
+      // console.log(images);
+      // return images;
+    }
   },
   mutations: {
     SET_DATA(state, data) {
       state.articles = data;
+    },
+    // переключение тега статей
+    // получаем объект тега из компонента
+    CHANGE_ARTICLE_TAG(state, tag) {
+      state.articleTags.forEach(articleTag => {
+        if (articleTag.text == tag.text) {
+          articleTag.active = true;
+        } else {
+          articleTag.active = false;
+        }
+      })
+    },
+    // переключение тега проектов
+    // получаем текст тега из компонента
+    CHANGE_TAG(state, tag) {
+      state.projectTags.forEach(projectTag => {
+        if (projectTag.text == tag) {
+          projectTag.active = true;
+        } else {
+          projectTag.active = false;
+        }
+      });
+    },
+    CHANGE_LIKE(state, id) {
+      // state.projects.filter( project => project.id === id).like = false;
+      // console.log(id);
+      state.projects.forEach( project => {
+        if (project.id == id) {
+          project.like = !project.like;}
+        })
     },
   },
   actions: {
@@ -282,6 +457,16 @@ export default createStore({
         ];
         commit('SET_DATA', dataFromServer);
       }, 3000);
+    },
+    change_article_tag(context, tag) {
+      context.commit('CHANGE_ARTICLE_TAG', tag);
+    },
+    changeTag( context, tag) {
+      context.commit('CHANGE_TAG', tag);
+    },
+    changeLike(context, id) {
+      console.log(id);
+      context.commit('CHANGE_LIKE',id);
     },
   },
   modules: {
