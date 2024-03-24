@@ -3,7 +3,8 @@
         <div class="project" v-for="project in getFilteredProjects" :key="project.id">
             <!-- <ProjectComponent :project="project" @change-like="changeLike" /> -->
             <!-- {{ project.title }} -->
-            <img class="project__img" :src="project.img[0]" alt="" @click="changeLike(project.id)" >
+            <img class="project__img" :src="project.img[0]" alt=""
+                @click="CHANGE_LIKE(project.id)">
             <div class="project__block">
                 <div>
                     <h3 class="project__heading">{{ project.title }}</h3>
@@ -12,7 +13,8 @@
                 <!-- <p>{{ project.img }}</p> -->
                 <div class="project__btn"><i class="fa-solid fa-chevron-right"></i></div>
                 <!-- <img v-if="project.like" class="star" :src="like" alt="" @click="project.like = !project.like"> -->
-                <img v-if="project.like" class="star" :src="like" alt="" @click="changeLike(project.id)">
+                <img v-if="project.like" class="star" :src="like" alt=""
+                    @click="CHANGE_LIKE(project.id)">
             </div>
         </div>
     </div>
@@ -20,7 +22,7 @@
 
 <script>
 import ProjectComponent from './ProjectComponent.vue';
-import { mapActions, mapState, mapGetters } from 'vuex';
+import { mapActions, mapMutations, mapGetters } from 'vuex';
 
     export default {
         data() {
@@ -34,7 +36,10 @@ import { mapActions, mapState, mapGetters } from 'vuex';
             //     projects: (state) => state.projects
             // }),
             ...mapGetters(['getFilteredProjects']),
-            ...mapActions(['changeLike']),
+            ...mapActions(['changeLike']),  // не сработал
+        },
+        methods: {
+            ...mapMutations(['CHANGE_LIKE']), // работает
         },
 
     }

@@ -465,7 +465,7 @@ export default createStore({
       context.commit('CHANGE_TAG', tag);
     },
     changeLike(context, id) {
-      console.log(id);
+      // console.log(id);
       context.commit('CHANGE_LIKE',id);
     },
   },
