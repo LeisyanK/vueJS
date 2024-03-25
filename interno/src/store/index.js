@@ -284,8 +284,38 @@ export default createStore({
       { text: "Kitchen Planning", active: false },
       { text: "Bedroom", active: false },
     ],
+    pageLinks: [
+      {
+        id: 1,
+        title: "Home",
+        url: "/"
+      },
+      {
+        id: 2,
+        title: "Project",
+        url: "/project"
+      },
+      {
+        id: 3,
+        title: "Blog",
+        url: "/blog"
+      },      
+      // {
+      //   id: 4,
+      //   title: "blogDetails",
+      //   url: "/blog/details"
+      // },
+      // {
+      //   id: 5,
+      //   title: "projectDetails",
+      //   url: "/project/details"
+      // },
+    ],
   },
   getters: {
+    getLinks(state) {
+      return state.pageLinks;
+    },
     getThreeArticles(state) {
       return state.articles.slice(0, 3);
     },

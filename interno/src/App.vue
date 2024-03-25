@@ -1,14 +1,19 @@
 <template>
-  <MainPage></MainPage>
+  <!-- <HeaderComponent /> -->
+  <RouterView />
+
+  <!-- <MainPage></MainPage>
   <BlogPage />
   <BlogDetailsPage />
   <ProjectsPage />
   <ProjectDetailsPage />
-  <NotFoundPage />
+  <NotFoundPage /> -->
 </template>
 
 <script>
 import { mapState, mapActions, mapMutations, mapGetters } from 'vuex';
+
+import HeaderComponent from "./components/HeaderComponent.vue";
 
 import MainPage from "./pages/MainPage.vue";
 import BlogPage from "./pages/BlogPage.vue";
@@ -19,6 +24,7 @@ import NotFoundPage from "./pages/NotFoundPage.vue";
 
 export default {
   components: { 
+    HeaderComponent,
     MainPage, 
     BlogPage,
     ProjectsPage ,

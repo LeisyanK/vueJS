@@ -9,9 +9,11 @@
         </div>
         <div class="header__right">
             <div class="menubar">
-                <a class="menu" href="index.html">Home</a>
+                <router-link class="menu" v-for="link in getLinks" :key="link.id" :to="link.url">{{ link.title
+                    }}</router-link>
+                <!-- <a class="menu" href="index.html">Home</a>
                 <a class="menu" href="project.html">Project</a>
-                <a class="menu" href="blog.html">Blog</a>
+                <a class="menu" href="blog.html">Blog</a> -->
             </div>
         </div>
     </header>
@@ -19,11 +21,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     data() {
         return {
             logo: require("@/assets/img/Logo.png"),
         }
+    },
+    computed: {
+        ...mapGetters(['getLinks']),
     },
 }
 </script>

@@ -13,9 +13,11 @@
         </div>
         <div class="pages">
             <h2 class="pages__heading">Pages</h2>
-            <a href="#" class="pages__link">Home</a>
+            <router-link class="pages__link" v-for="link in getLinks" :key="link.id" :to="link.url">{{ link.title
+                }}</router-link>
+            <!-- <a href="#" class="pages__link">Home</a>
             <a href="#" class="pages__link">Project</a>
-            <a href="#" class="pages__link">Blog</a>
+            <a href="#" class="pages__link">Blog</a> -->
         </div>
         <div class="contacts">
             <h2 class="contacts__heading">Contact</h2>
@@ -27,11 +29,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     data() {
         return {
             logo: require("@/assets/img/Logo.png"),
         }
+    },
+    computed: {
+        ...mapGetters(['getLinks']),
     },
 }
 </script>

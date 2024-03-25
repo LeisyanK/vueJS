@@ -5,9 +5,6 @@
     <ProjectListComponent />
     <PaginationComponent />
     <FooterComponent></FooterComponent>
-
-
-
 </template>
 
 <script>
