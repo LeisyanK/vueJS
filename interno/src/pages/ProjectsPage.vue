@@ -3,7 +3,7 @@
     <BannerComponent />
     <ProjectCategoriesComponent />
     <ProjectListComponent />
-    <PaginationComponent />
+    <!-- <PaginationComponent /> -->
     <FooterComponent></FooterComponent>
 </template>
 
