@@ -1,13 +1,13 @@
 <template>
     <section class="banner">
         <!-- <img :src="bannerImg" alt="баннер"> -->
-        <img :src="bannerInfo[0].img" alt="баннер">
+        <img :src="bannerInfo[bannerNumber].img" alt="баннер">
         <div class="banner_align">
             <div class="intro">
-                <h1 class="intro__heading"> {{ bannerInfo[0].heading }}</h1>
+                <h1 class="intro__heading"> {{ bannerInfo[bannerNumber].heading }}</h1>
                 <div class="breadcrumbs">
                     <a class="breadcrumbs__link" href="index.html">Home</a>
-                    <a class="breadcrumbs__link" :href="breadcrumbsLink">{{ bannerInfo[0].pageName }}</a>
+                    <a class="breadcrumbs__link" :href="breadcrumbsLink">{{ bannerInfo[bannerNumber].pageName }}</a>
                 </div>
             </div>
         </div>
@@ -21,15 +21,28 @@ export default {
     // props: {
     //     bannerInfo: Object,
     // },
-    // data() {
-    //     return {
-    //         // bannerImg: require("@/assets/img/blog/banner.jpg"),
-    //         bannerImg: this.bannerInfo.img,
-    //         breadcrumbsLink: this.bannerInfo.pageName.toLowerCase() + '.html',
-    //     }
-    // },
+    data() {
+        return {
+            bannerNumber: 0,
+            // bannerImg: require("@/assets/img/blog/banner.jpg"),
+            // bannerImg: this.bannerInfo.img,
+            // breadcrumbsLink: this.bannerInfo.pageName.toLowerCase() + '.html',
+        }
+    },
+    methods: {
+        getBannerNumber(){
+            // console.log(window.location.hash);
+            console.log(window.location.pathname);
+            if (window.location.pathname === '/blog') {
+                this.bannerNumber = 1;
+            }
+        }
+    },
     computed: {
         ...mapState(['bannerInfo']),
+    },
+    created(){
+        this.getBannerNumber();
     },
 }
 </script>
