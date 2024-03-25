@@ -19,7 +19,9 @@
         <!-- <div class="pagination__btn pagination__btn_active">01</div>
         <div class="pagination__btn">02</div>
         <div class="pagination__btn">03</div> -->
-        <div class="pagination__btn"><i class="fa-solid fa-chevron-right"></i></div>
+        <!-- <div class="pagination__btn"><i class="fa-solid fa-chevron-right"></i></div> -->
+        <router-link class="pagination__btn" :to="getPageLink(totalPages)"><i
+                class="fa-solid fa-chevron-right"></i></router-link>
     </div>
 </template>
 
