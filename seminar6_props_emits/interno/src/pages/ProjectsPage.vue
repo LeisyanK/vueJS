@@ -23,13 +23,13 @@ export default {
     },
     data() {
         return {
-            // selectedProjectTag: '',
-            // projectTags: [
-            //     { text: "Bathroom", active: false },
-            //     { text: "Bedroom", active: true },
-            //     { text: "Kitchen", active: false },
-            //     { text: "Living Area", active: false },
-            // ],
+            selectedProjectTag: '',
+            projectTags: [
+                { text: "Bathroom", active: false },
+                { text: "Bedroom", active: true },
+                { text: "Kitchen", active: false },
+                { text: "Living Area", active: false },
+            ],
             projects: [
                 { id: 1, tag: 'Bedroom', title: 'Minimal Bedroom', links: 'Decor / Architecture', img: require("@/assets/img/projects/bedroom1.jpg"), like: true },
                 { id: 2, tag: 'Bedroom', title: 'Classic Minimal Bedroom', links: 'Decor / Architecture', img: require("@/assets/img/projects/bedroom2.jpg"), like: false },

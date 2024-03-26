@@ -1,5 +1,6 @@
 <template>
     <div class="projects center">
+        <!-- <div class="project" v-for="project in paginatedProjects" :key="project.id" @click=""> -->
         <div class="project" v-for="project in paginatedProjects" :key="project.id">
             <img class="project__img" :src="project.img[0]" alt="" @click="CHANGE_LIKE(project.id)">
             <div class="project__block">
@@ -7,7 +8,8 @@
                     <h3 class="project__heading">{{ project.title }}</h3>
                     <p class="project__text">{{ project.links }}</p>
                 </div>
-                <div class="project__btn"><i class="fa-solid fa-chevron-right"></i></div>
+                <router-link class="project__btn" :to="getProjectDetailsLink(project.id) "><i
+                        class="fa-solid fa-chevron-right"></i></router-link>
                 <img v-if="project.like" class="star" :src="like" alt="" @click="CHANGE_LIKE(project.id)">
             </div>
         </div>
@@ -61,6 +63,9 @@ import { mapActions, mapMutations, mapGetters } from 'vuex';
             },
             getPageLink(pageNumber) {
                 return `/project/${pageNumber}`;
+            },
+            getProjectDetailsLink(projectNumber) {
+                return `/project/details/${projectNumber}`;
             },
         },
 

@@ -93,7 +93,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/index/project1.jpg"), require("@/assets/img/projects/bedroom1.jpg"), require("@/assets/img/projects/bedroom2.jpg"), require("@/assets/img/projects/bedroom3.jpg")],
         like: true,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquamsem vitae turpis dignissim maximus.Aliquam sollicitudin tellumassa, vbel maximus purus posuere in.Dojrices gravida dignissim.Praesent at nibh in mi fringilla mattis.Phasellus ut dolor odio.Aenean in the ipsum vel lectus bibendum commodo. \nIn nec sem suscipit, convallis leo vitae, lacinia nibh.Cras amet tellus lectus.Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu.Donec a pellentesque Cras erat enim, gravida non ante vitae, elequis convallis elit, in viverra felis.Donec ultrices tellus vitae iaculisvd porta.Proin tincidunt ligula id purus porttitor.'
+        text: 'Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquamsem vitae turpis dignissim maximus.Aliquam sollicitudin tellumassa, vbel maximus purus posuere in.Dojrices gravida dignissim.Praesent at nibh in mi fringilla mattis.Phasellus ut dolor odio.Aenean in the ipsum vel lectus bibendum commodo. \nIn nec sem suscipit, convallis leo vitae, lacinia nibh.Cras amet tellus lectus.Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu.Donec a pellentesque Cras erat enim, gravida non ante vitae, elequis convallis elit, in viverra felis.Donec ultrices tellus vitae iaculisvd porta.Proin tincidunt ligula id purus porttitor.'
       },
       {
         id: 2,
@@ -102,7 +102,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/index/project2.jpg"), require("@/assets/img/projects/bedroom2.jpg"), require("@/assets/img/projects/bedroom3.jpg"), require("@/assets/img/projects/bedroom4.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo magnam vel aspernatur placeat aperiam eum dolorem distinctio nesciunt, esse eos?'
+        text: 'Project 2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo magnam vel aspernatur placeat aperiam eum dolorem distinctio nesciunt, esse eos?'
       },
       {
         id: 3,
@@ -111,7 +111,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/index/project3.jpg"), require("@/assets/img/projects/bedroom3.jpg"), require("@/assets/img/projects/bedroom4.jpg"), require("@/assets/img/projects/bedroom5.jpg")],
         like: false,
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati ducimus. Recusandae, possimus qui deserunt quisquam accusamus perferendis odio, nostrum voluptatibus iste dolores, nisi autem quibusdam velit beatae iure magnam.'
+        text: 'Project 3. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati ducimus. Recusandae, possimus qui deserunt quisquam accusamus perferendis odio, nostrum voluptatibus iste dolores, nisi autem quibusdam velit beatae iure magnam.'
       },
       {
         id: 4,
@@ -120,7 +120,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/index/project4.jpg"), require("@/assets/img/projects/bedroom4.jpg"), require("@/assets/img/projects/bedroom5.jpg"), require("@/assets/img/projects/bedroom6.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis accusamus debitis sunt dolor! Cum quos facere animi ad tempore totam, alias dolorum temporibus, debitis quisquam minus eveniet exercitationem? Quidem, voluptas!'
+        text: 'Project 4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis accusamus debitis sunt dolor! Cum quos facere animi ad tempore totam, alias dolorum temporibus, debitis quisquam minus eveniet exercitationem? Quidem, voluptas!'
       },
       {
         id: 5,
@@ -129,7 +129,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/bedroom5.jpg"), require("@/assets/img/projects/bedroom6.jpg"), require("@/assets/img/projects/bedroom7.jpg")],
         like: false,
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi, facilis autem nemo animi provident error est hic accusamus eaque tempora aliquam! Ad commodi unde aliquam perferendis aperiam. Debitis, distinctio itaque.'
+        text: 'Project 5. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi, facilis autem nemo animi provident error est hic accusamus eaque tempora aliquam! Ad commodi unde aliquam perferendis aperiam. Debitis, distinctio itaque.'
       },
       {
         id: 6,
@@ -138,7 +138,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/bedroom6.jpg"), require("@/assets/img/projects/bedroom7.jpg"), require("@/assets/img/projects/bedroom8.jpg")],
         like: true,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci commodi quibusdam sequi minima, voluptatem velit. Facilis ut similique quisquam vel sunt quae sed, vitae unde, obcaecati voluptate consequatur ea.'
+        text: 'Project 6. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci commodi quibusdam sequi minima, voluptatem velit. Facilis ut similique quisquam vel sunt quae sed, vitae unde, obcaecati voluptate consequatur ea.'
       },
       {
         id: 7,
@@ -147,7 +147,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/bedroom7.jpg"), require("@/assets/img/projects/bedroom8.jpg"), require("@/assets/img/projects/bedroom1.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quae ducimus voluptatibus rem! Id, eius. Consequuntur eligendi tempora cumque quos, fugit pariatur! Praesentium tenetur sint, nostrum ea officia iusto! Illo.'
+        text: 'Project 7. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quae ducimus voluptatibus rem! Id, eius. Consequuntur eligendi tempora cumque quos, fugit pariatur! Praesentium tenetur sint, nostrum ea officia iusto! Illo.'
       },
       {
         id: 8,
@@ -156,7 +156,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/bedroom8.jpg"), require("@/assets/img/projects/bedroom1.jpg"), require("@/assets/img/projects/bedroom2.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro mollitia labore praesentium sed, similique, itaque expedita, optio exercitationem est odio quas rem nulla maiores laboriosam harum distinctio iste numquam iure.'
+        text: 'Project 8. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro mollitia labore praesentium sed, similique, itaque expedita, optio exercitationem est odio quas rem nulla maiores laboriosam harum distinctio iste numquam iure.'
       },
       {
         id: 9,
@@ -165,7 +165,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/bathroom1.jpg"), require("@/assets/img/projects/bathroom2.jpg"), require("@/assets/img/projects/bathroom3.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci commodi quibusdam sequi minima, voluptatem velit. Facilis ut similique quisquam vel sunt quae sed, vitae unde, obcaecati voluptate consequatur ea.'
+        text: 'Project 9. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci commodi quibusdam sequi minima, voluptatem velit. Facilis ut similique quisquam vel sunt quae sed, vitae unde, obcaecati voluptate consequatur ea.'
       },
       {
         id: 10,
@@ -174,7 +174,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/bathroom2.jpg"), require("@/assets/img/projects/bathroom3.jpg"), require("@/assets/img/projects/bathroom4.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro mollitia labore praesentium sed, similique, itaque expedita, optio exercitationem est odio quas rem nulla maiores laboriosam harum distinctio iste numquam iure.'
+        text: 'Project 10. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro mollitia labore praesentium sed, similique, itaque expedita, optio exercitationem est odio quas rem nulla maiores laboriosam harum distinctio iste numquam iure.'
       },
       {
         id: 11,
@@ -183,7 +183,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/bathroom3.jpg"), require("@/assets/img/projects/bathroom4.jpg"), require("@/assets/img/projects/bathroom1.jpg")],
         like: true,
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi, facilis autem nemo animi provident error est hic accusamus eaque tempora aliquam! Ad commodi unde aliquam perferendis aperiam. Debitis, distinctio itaque.'
+        text: 'Project 11. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi, facilis autem nemo animi provident error est hic accusamus eaque tempora aliquam! Ad commodi unde aliquam perferendis aperiam. Debitis, distinctio itaque.'
       },
       {
         id: 12,
@@ -191,7 +191,7 @@ export default createStore({
         title: 'Modern Bathroom',
         links: 'Decor / Architecture', img: [require("@/assets/img/projects/bathroom4.jpg"), require("@/assets/img/projects/bathroom2.jpg"), require("@/assets/img/projects/bathroom3.jpg")],
         like: false,
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati ducimus. Recusandae, possimus qui deserunt quisquam accusamus perferendis odio, nostrum voluptatibus iste dolores, nisi autem quibusdam velit beatae iure magnam.'
+        text: 'Project 12. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati ducimus. Recusandae, possimus qui deserunt quisquam accusamus perferendis odio, nostrum voluptatibus iste dolores, nisi autem quibusdam velit beatae iure magnam.'
       },
       {
         id: 13,
@@ -200,7 +200,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/living1.jpg"), require("@/assets/img/projects/living2.jpg"), require("@/assets/img/projects/living3.jpg")],
         like: true,
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati ducimus. Recusandae, possimus qui deserunt quisquam accusamus perferendis odio, nostrum voluptatibus iste dolores, nisi autem quibusdam velit beatae iure magnam.'
+        text: 'Project 13. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati ducimus. Recusandae, possimus qui deserunt quisquam accusamus perferendis odio, nostrum voluptatibus iste dolores, nisi autem quibusdam velit beatae iure magnam.'
       },
       {
         id: 14,
@@ -209,7 +209,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/kitchen1.jpg"), require("@/assets/img/projects/kitchen2.jpg"), require("@/assets/img/projects/kitchen3.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro mollitia labore praesentium sed, similique, itaque expedita, optio exercitationem est odio quas rem nulla maiores laboriosam harum distinctio iste numquam iure.'
+        text: 'Project 14. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro mollitia labore praesentium sed, similique, itaque expedita, optio exercitationem est odio quas rem nulla maiores laboriosam harum distinctio iste numquam iure.'
       },
       {
         id: 15,
@@ -218,7 +218,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/kitchen2.jpg"), require("@/assets/img/projects/kitchen3.jpg"), require("@/assets/img/projects/kitchen4.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quae ducimus voluptatibus rem! Id, eius. Consequuntur eligendi tempora cumque quos, fugit pariatur! Praesentium tenetur sint, nostrum ea officia iusto! Illo.'
+        text: 'Project 15. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quae ducimus voluptatibus rem! Id, eius. Consequuntur eligendi tempora cumque quos, fugit pariatur! Praesentium tenetur sint, nostrum ea officia iusto! Illo.'
       },
       {
         id: 16,
@@ -227,7 +227,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/living2.jpg"), require("@/assets/img/projects/living3.jpg"), require("@/assets/img/projects/living1.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quae ducimus voluptatibus rem! Id, eius. Consequuntur eligendi tempora cumque quos, fugit pariatur! Praesentium tenetur sint, nostrum ea officia iusto! Illo.'
+        text: 'Project 16. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quae ducimus voluptatibus rem! Id, eius. Consequuntur eligendi tempora cumque quos, fugit pariatur! Praesentium tenetur sint, nostrum ea officia iusto! Illo.'
       },
       {
         id: 17,
@@ -236,7 +236,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/living3.jpg"), require("@/assets/img/projects/living2.jpg"), require("@/assets/img/projects/living1.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci commodi quibusdam sequi minima, voluptatem velit. Facilis ut similique quisquam vel sunt quae sed, vitae unde, obcaecati voluptate consequatur ea.'
+        text: 'Project 17. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci commodi quibusdam sequi minima, voluptatem velit. Facilis ut similique quisquam vel sunt quae sed, vitae unde, obcaecati voluptate consequatur ea.'
       },
       {
         id: 18,
@@ -245,7 +245,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/kitchen2.jpg"), require("@/assets/img/projects/kitchen3.jpg"), require("@/assets/img/projects/kitchen4.jpg")],
         like: true,
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi, facilis autem nemo animi provident error est hic accusamus eaque tempora aliquam! Ad commodi unde aliquam perferendis aperiam. Debitis, distinctio itaque.'
+        text: 'Project 18. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi, facilis autem nemo animi provident error est hic accusamus eaque tempora aliquam! Ad commodi unde aliquam perferendis aperiam. Debitis, distinctio itaque.'
       },
       {
         id: 19,
@@ -254,7 +254,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/kitchen3.jpg"), require("@/assets/img/projects/kitchen4.jpg"), require("@/assets/img/projects/kitchen5.jpg")],
         like: false,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci commodi quibusdam sequi minima, voluptatem velit. Facilis ut similique quisquam vel sunt quae sed, vitae unde, obcaecati voluptate consequatur ea.'
+        text: 'Project 19. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci commodi quibusdam sequi minima, voluptatem velit. Facilis ut similique quisquam vel sunt quae sed, vitae unde, obcaecati voluptate consequatur ea.'
       },
       {
         id: 20,
@@ -263,7 +263,7 @@ export default createStore({
         links: 'Decor / Architecture',
         img: [require("@/assets/img/projects/kitchen4.jpg"), require("@/assets/img/projects/kitchen5.jpg"), require("@/assets/img/projects/kitchen1.jpg")],
         like: false,
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati ducimus. Recusandae, possimus qui deserunt quisquam accusamus perferendis odio, nostrum voluptatibus iste dolores, nisi autem quibusdam velit beatae iure magnam.'
+        text: 'Project 20. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati ducimus. Recusandae, possimus qui deserunt quisquam accusamus perferendis odio, nostrum voluptatibus iste dolores, nisi autem quibusdam velit beatae iure magnam.'
       },
     ],
     bannerInfo: [
@@ -311,8 +311,18 @@ export default createStore({
       //   url: "/project/details"
       // },
     ],
+    projectDetailsLink: [
+      {
+        id: 1,
+        title: "projectDetails",
+        url: "/project/details"
+      },
+    ]
   },
   getters: {
+    getProjectDetailsLink(state) {
+      return state.projectDetailsLink;
+    },
     getLinks(state) {
       return state.pageLinks;
     },

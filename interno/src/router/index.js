@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from '../pages/MainPage.vue'
 import BlogPage from '../pages/BlogPage.vue'
 import NotFoundPage from '../pages/NotFoundPage.vue'
+import ProjectDetailsPage from '@/pages/ProjectDetailsPage.vue'
+import BlogDetailsPage from '@/pages/BlogDetailsPage.vue'
 
 const routes = [
   {
@@ -19,9 +21,19 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../pages/ProjectsPage.vue')
   },
   {
+    path: '/project/details/:projectNumber?',
+    name: 'projectDetails',
+    component: ProjectDetailsPage
+  },
+  {
     path: '/blog/:pageNumber?',
     name: 'blog',
     component: BlogPage
+  },
+  {
+    path: '/blog/details/:projectNumber?',
+    name: 'blogDetails',
+    component: BlogDetailsPage
   },
   {
     path: '/:CatchAll(.*)',     // : означает, что путь динамический

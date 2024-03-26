@@ -1,22 +1,13 @@
 <template>
     <div class="slider">
-        <!-- <div class="imgBox">
-            <img class="img" :src="currentImg" :class="{ resize: resizeFlag }" @dblclick="resizeFlag = !resizeFlag"
-                @click="nextImage">
-        </div> -->
-        <!-- <h2>{{ projectNumber }}</h2> -->
-        <!-- <p>{{ projectImages }}</p> -->
-        <img v-for="item in projectImages" :key="item.id" :src="currentImg" alt="">
-        <!-- <h2>{{ projectNumber }}</h2> -->
         <div class="imgBox">
             <img class="img" :src="currentImg" :class="{ resize: resizeFlag }" @dblclick="resizeFlag = !resizeFlag"
-            @click="nextImage">
+                @click="nextImage">
         </div>
         <!-- <div class=" buttons">
             <button id="prev">НАЗАД</button>
             <button id="next">ВПЕРЕД</button>
         </div> -->
-
         <!-- <div class="dots">
             <div v-for="(item, index) in images">
                 <div v-if="index === currentImgNumber" class="dot dot-current"></div>
@@ -30,44 +21,40 @@
 import { mapState, mapGetters } from 'vuex';
 
     export default {
-        // props: {
-        //     images: Array,
-        // },
+        props: {
+            images: Array,
+        },
         data() {
             return {
                 // projectImages: [require("@/assets/img/projects/bedroom1.jpg"), require("@/assets/img/projects/bedroom2.jpg"), require("@/assets/img/projects/bedroom3.jpg")],
-                currentImg: require("@/assets/img/projects/Photo.png"),
-
+                // currentImg: require("@/assets/img/projects/Photo.png"),
                 currentImgNumber: 0,
-                // currentImg: this.images[currentImgNumber],
+                currentImg: this.images[currentImgNumber],
                 resizeFlag: false,
-                projectNumber: null,
-                // currentImg: this.projectImages[0],
             }
         },
         methods: {
             nextImage(){
-                if (this.currentImgNumber === this.projectImages.length - 1) 
+                if (this.currentImgNumber === this.images.length - 1) 
                     this.currentImgNumber = 0;
                 else this.currentImgNumber++;
-                this.currentImg = this.projectImages[this.currentImgNumber];
+                this.currentImg = this.images[this.currentImgNumber];
             },
             nextDot(index) {
                 this.currentImgNumber = index;
-                this.currentImg = this.projectImages[this.currentImgNumber];
+                this.currentImg = this.images[this.currentImgNumber];
             },
         },
         computed: {
-            ...mapState({
-                projectImages: (state) => state.projects[this.projectNumber - 1].img,
-            }),
-            // ...mapGetters(['getImages']),
+            // ...mapState({
+            //     projectImages: (state) => state.projects.slice(0,1).img[0],
+            // }),
+            ...mapGetters(['getImages']),
         },
-        created(){
-            const projectNumberParam = parseInt(this.$route.params.projectNumber);
-            console.log('project number=', projectNumberParam);
-            this.projectNumber = isNaN(projectNumberParam) || projectNumberParam;
-        }
+        // created(){
+        //     const dotArray = document.querySelectorAll('.dot');
+        //     dotArray[0].classList.add('dot-current');
+        // }
     }
 </script>
 
