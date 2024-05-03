@@ -2,6 +2,7 @@
     <HeaderComponent />
     <BannerComponent />
     <BlogComponent />
+    
     <FooterComponent></FooterComponent>
 
 </template>

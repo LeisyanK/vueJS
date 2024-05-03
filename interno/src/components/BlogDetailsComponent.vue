@@ -48,10 +48,38 @@ import BlogCategoriesComponent from "../components/BlogCategoriesComponent.vue";
         data() {
             return {
                 blogDetailsBanner: require('@/assets/img/blog/Banner_blog_details.jpg'),
+                articleNumber: null,
+            }
+        },
+        methods: {
+            // 02/05/2024
+            ...mapActions(['load_article_tag']),
+
+            // 02.05.2024
+            getArticleNumber() {
+                // получаем id статьи из адресной строки
+                // console.log('pathname=', window.location.pathname);
+                const articleNumberParam = parseInt(this.$route.params.articleNumber) - 1;
+                console.log('article number in Details =', articleNumberParam);
+                this.articleNumber = isNaN(articleNumberParam) || articleNumberParam;
+            },
+            // 02.05.2024
+            changeArticleCategoryTag() {
+                // получили id статьи
+                this.getArticleNumber();
+                // по id статьи вычисляем его tag
+                const articleTag = this.getAllArticles[this.articleNumber].tag;
+                console.log(articleTag);
+                // меняем активный tag
+                this.load_article_tag(articleTag);
             }
         },
         computed: {
-            ...mapGetters(['getFilteredArticles']),
+            ...mapState(['articleTags']),
+
+            ...mapGetters(['getAllArticles', 'getFilteredArticles']),
+            // ...mapGetters(['getAllArticles']),
+
         },
         // methods: {
         //     ...mapActions(['fetchData']),
@@ -60,6 +88,11 @@ import BlogCategoriesComponent from "../components/BlogCategoriesComponent.vue";
         // // получение данных при загрузке страницы
         //     this.$store.dispatch('fetchData');
         // },
+
+        // 02.05.2024
+        created() {
+            this.changeArticleCategoryTag();
+        },
     }
 </script>
 

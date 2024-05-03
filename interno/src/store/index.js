@@ -338,12 +338,19 @@ export default createStore({
     getProjectTags(state) {
       return state.projectTags;
     },
+    getAllArticles(state) {
+      return state.articles;
+    },
     // фильтрация статей по тегу
     getFilteredArticles(state) {
       const selectedTag = state.articleTags.filter(tag => tag.active == true);
-      // console.log(selectedTag[0]);
+      console.log(selectedTag[0]);
+      // console.log(state.articleTags);
       
       // let filteredArticles = state.articles.filter(article => article.tag == selectedTag[0].text);
+      if (selectedTag[0] == undefined) {
+        selectedTag[0] = { text: 'Bedroom', active: true };
+      }
       let filteredArticles = state.articles.filter(article => article.tag.includes(selectedTag[0].text));
       // console.log(filteredArticles);
       return filteredArticles;
@@ -379,16 +386,38 @@ export default createStore({
     SET_DATA(state, data) {
       state.articles = data;
     },
-    // переключение тега статей
-    // получаем объект тега из компонента
-    CHANGE_ARTICLE_TAG(state, tag) {
+    // 
+    LOAD_ARTICLE_TAG(state, tag) {
+      console.log(tag);
+      console.log(state.articleTags);
+
       state.articleTags.forEach(articleTag => {
-        if (articleTag.text == tag.text) {
+        console.log(tag, articleTag.text);
+        // if (articleTag.text == tag.text) {
+        if (tag.includes(articleTag.text)) {
           articleTag.active = true;
         } else {
           articleTag.active = false;
         }
       })
+      console.log(state.articleTags);
+    },
+    // переключение тега статей
+    // получаем объект тега из компонента
+    CHANGE_ARTICLE_TAG(state, tag) {
+      console.log(tag);
+      console.log(state.articleTags);
+
+      state.articleTags.forEach(articleTag => {
+        console.log(tag, articleTag.text);
+        if (articleTag.text == tag.text) {
+        // if (tag.includes(articleTag.text)) {
+          articleTag.active = true;
+        } else {
+          articleTag.active = false;
+        }
+      })
+      console.log(state.articleTags);
     },
     // переключение тега проектов
     // получаем текст тега из компонента
@@ -498,10 +527,15 @@ export default createStore({
         commit('SET_DATA', dataFromServer);
       }, 3000);
     },
+    load_article_tag(context, tag) {
+      console.log(tag);
+      context.commit('LOAD_ARTICLE_TAG', tag);
+    },
     change_article_tag(context, tag) {
+      console.log(tag);
       context.commit('CHANGE_ARTICLE_TAG', tag);
     },
-    changeTag( context, tag) {
+    changeTag( context, tag) { // change project tag
       context.commit('CHANGE_TAG', tag);
     },
     changeLike(context, id) {

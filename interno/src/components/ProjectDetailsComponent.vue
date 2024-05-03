@@ -67,6 +67,7 @@ import SliderComponent from './SliderComponent.vue';
             }
         },
         methods: {
+            // получаем id проекта из адресной строки
             getProjectNumber() {
                 // console.log('pathname=', window.location.pathname);
                 const projectNumberParam = parseInt(this.$route.params.projectNumber) - 1;

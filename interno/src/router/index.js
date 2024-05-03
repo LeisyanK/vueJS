@@ -6,6 +6,7 @@ import NotFoundPage from '../pages/NotFoundPage.vue'
 import ProjectDetailsPage from '@/pages/ProjectDetailsPage.vue'
 import BlogDetailsPage from '@/pages/BlogDetailsPage.vue'
 
+// https://v3.router.vuejs.org/ru/guide/essentials/navigation.html
 const routes = [
   {
     path: '/',
@@ -31,7 +32,7 @@ const routes = [
     component: BlogPage
   },
   {
-    path: '/blog/details/:projectNumber?',
+    path: '/blog/details/:articleNumber?',
     name: 'blogDetails',
     component: BlogDetailsPage
   },

@@ -2,7 +2,7 @@
     <div class="categories-block center">
         <div class="categories">
             <div class="categories__item" v-for="tag in getProjectTags" :key="tag.id" :class="{ active: tag.active }"
-                @click="changeTag(tag.text)">
+                @click="toFirstPage(); changeTag(tag.text)">
                 {{ tag.text }}
             </div>
         </div>
@@ -18,6 +18,14 @@ import { mapActions, mapState, mapGetters } from 'vuex';
         },
         methods: {
             ...mapActions(['changeTag']),
+            toFirstPage() {
+                // this.$router.push({ name: 'page', params: { pageId: '1' } })
+                this.$router.push('/project/') // при переключении тега переходим на первую страницу пагинации
+                // покрасим первую кнопку пагинации
+                const firstPageNumber = document.querySelector('.pagination__btn');
+                // console.log('firstPageNumber', firstPageNumber);
+                firstPageNumber.classList.add('pagination__btn_active');
+            },
         }
         
     }

@@ -24,7 +24,6 @@ import FooterComponent from "../components/FooterComponent.vue";
             PaginationComponent,
             FooterComponent
         }
-        
     }
 </script>
 

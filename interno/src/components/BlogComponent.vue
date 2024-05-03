@@ -15,7 +15,7 @@
         </div>
 
         <div class="articles">
-            <div v-for="article in getSixArticles" :key="article.id" class="article article_small">
+            <div v-for="article in paginatedArticles" :key="article.id" class="article article_small">
                 <div class="article__img">
                     <img :src="article.img" alt="статья">
                     <p class="article__tag">{{ article.tag }}</p>
@@ -25,13 +25,31 @@
                 </div>
                 <div class="article__block">
                     <p class="article__date">{{ article.date }}</p>
-                    <div class="article__btn"><i class="fa-solid fa-chevron-right"></i></div>
+                    <!-- <div class="article__btn"><i class="fa-solid fa-chevron-right"></i></div> -->
+                    <router-link class="article__btn" :to="getArticleDetailsLink(article.id)"><i
+                            class="fa-solid fa-chevron-right"></i></router-link>
                 </div>
             </div>
-
         </div>
 
-        <PaginationComponent />
+        <!-- <PaginationComponent /> -->
+        <div v-if="totalPages > 1" class="pagination">
+            <router-link class="pagination__btn" v-for="pageNumber in totalPages" :key="pageNumber"
+                :to="getPageLink(pageNumber)">
+                {{ pageNumber }}
+            </router-link>
+
+            <!-- <div v-for="pageNumber in totalPages" :key="pageNumber"> -->
+            <!-- <router-link v-if="pageNum == pageNumber" class="pagination__btn pagination__btn_active"
+                    :to="getPageLink(pageNumber)">{{
+                    pageNumber }}</router-link> -->
+            <!-- <router-link class="pagination__btn" :to="getPageLink(pageNumber)">0{{ pageNumber
+                    }}</router-link>
+            </div>
+
+            <router-link class="pagination__btn" :to="getPageLink(totalPages)"><i
+                    class="fa-solid fa-chevron-right"></i></router-link> -->
+        </div>
     </section>
 </template>
 
@@ -46,14 +64,52 @@ import PaginationComponent from './PaginationComponent.vue';
         LatestPost,
         PaginationComponent
     },
-    computed: {
-        ...mapState({
-            projects: (state) => state.articles.slice(0, 6)
-        }),
-        ...mapGetters(['getSixArticles']),
-
+    data() {
+        return {
+            itemsPerPage: 6,
+            // pageNum: 1,
+        }
     },
+    computed: {
+        // ...mapState({
+        //     projects: (state) => state.articles.slice(0, 6)
+        // }),
+        ...mapGetters(['getAllArticles']),
+        totalPages() {
+            return Math.ceil(this.getAllArticles.length / this.itemsPerPage);
+        },
+        paginatedArticles() {
+            const pageNumber = this.getCurrentPageNumber();
+            // this.pageNum = this.getCurrentPageNumber();
+            const startIndex = (pageNumber - 1) * this.itemsPerPage;
+            const endIndex = startIndex + this.itemsPerPage;
+            return this.getAllArticles.slice(startIndex, endIndex);
+        },
+    },
+    methods: {
+        // 02.05.2024
+        // ...mapActions(['change_article_tag']),
 
+        getCurrentPageNumber() {
+            const pageNumberParam = parseInt(this.$route.params.pageNumber);
+            return isNaN(pageNumberParam) || pageNumberParam < 1
+                ? 1
+                : pageNumberParam;
+        },
+        getPageLink(pageNumber) {
+            return `/blog/${pageNumber}`;
+        },
+        getArticleDetailsLink(articleNumber) {
+            // 02.05.2024
+            // определяем tag у выбранной статьи и меняем его active на значение true, у остальных тегов будет false
+            console.log("articleNumber ", articleNumber);
+            const articleTag = this.getAllArticles[articleNumber].tag;
+            console.log(articleTag);
+            // this.change_article_tag(tag);
+            // март 2024
+            return `/blog/details/${articleNumber}`;
+        },
+    },
     }
 </script>
 
@@ -129,11 +185,13 @@ import PaginationComponent from './PaginationComponent.vue';
     &__img {
         position: relative;
         margin-bottom: 20px;
+        width: 100%;
     }
 
     &__img img {
         border-radius: 40px 40px 0 0;
         background-color: #EAEAEA;
+        width: 100%;
     }
 
     &__tag {
