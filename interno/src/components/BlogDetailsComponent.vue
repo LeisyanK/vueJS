@@ -8,10 +8,10 @@
                 <div class="blog-details__text">
                     <h2 class="blog-details__heading">{{ article.heading }}</h2>
                 </div>
-                <div class="blog-details__textBox">
+                <!-- <div class="blog-details__textBox">
                     <p class="blog-details__text"> {{ article.tag }}
                     </p>
-                </div>
+                </div> -->
                 <div class="blog-details__img">
                     <img :src="article.img" alt="статья">
                 </div>
